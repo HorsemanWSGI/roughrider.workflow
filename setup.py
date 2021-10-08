@@ -18,17 +18,19 @@ setup(
     version=version,
     author='Souheil CHELFOUH',
     author_email='trollfot@gmail.com',
-    url='http://gitweb.dolmen-project.org',
+    url='https://github.com/HorsemanWSGI/roughrider.workflow',
     download_url='http://pypi.python.org/pypi/roughrider.workflow',
     description='Pure python workflow/transition system.',
-    long_description=(open("README.txt").read() + "\n" +
-                      open(os.path.join("docs", "HISTORY.txt")).read()),
+    long_description=(open("README.rst").read() + "\n" +
+                      open(os.path.join("docs", "HISTORY.rst")).read()),
     license='ZPL',
     classifiers=[
         'Environment :: Web Environment',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: Zope Public License',
-        'Programming Language :: Python:: 3 :: Only',
+        'Programming Language :: Python :: 3.8',
+        'Programming Language :: Python :: 3.9',
+        'Programming Language :: Python :: 3.10',
     ],
     packages=find_packages('src'),
     package_dir={'': 'src'},
