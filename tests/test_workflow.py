@@ -1,5 +1,5 @@
 import pytest
-from roughrider.predicate import ConstraintError, Validator, Or
+from roughrider.predicate import ConstraintError, Or
 from roughrider.workflow.components import Action, Transition, Transitions
 from roughrider.workflow.workflow import (
     WorkflowItem, WorkflowState, Workflow)
@@ -15,7 +15,7 @@ def NonEmptyDocument(item, **namespace):
         raise ConstraintError(message='Body is empty.')
 
 
-class RoleValidator(Validator):
+class RoleValidator:
 
     def __init__(self, role):
         self.role = role

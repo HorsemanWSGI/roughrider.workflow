@@ -1,6 +1,7 @@
 from collections import defaultdict
 from typing import NamedTuple, Iterable, Tuple, Optional, Mapping
-from roughrider.predicate.validators import Constraint, resolve_validators
+from roughrider.predicate.utils import resolve_constraints
+from roughrider.predicate.types import Predicate
 from roughrider.predicate.errors import ConstraintsErrors
 
 
@@ -17,7 +18,7 @@ class State:
 class Action:
 
     identifier: str
-    constraints: Iterable[Constraint]
+    constraints: Iterable[Predicate]
 
     def __init__(self, identifier: str, constraints: Optional[list] = None):
         self.identifier = identifier
@@ -33,7 +34,7 @@ class Action:
         """Checks the constraints against the given object.
         """
         if self.constraints:
-            return resolve_validators(self.constraints, item, **ns)
+            return resolve_constraints(self.constraints, item, **ns)
 
 
 class Transition(NamedTuple):
