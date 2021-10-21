@@ -11,7 +11,7 @@ Example
 
 .. code-block:: python
 
-  from roughrider.predicate import ConstraintError, Validator, Or
+  from roughrider.predicate import ConstraintError, Or
   from roughrider.workflow.components import Action, Transition, Transitions
   from roughrider.workflow.workflow import (
       WorkflowItem, WorkflowState, Workflow)
@@ -22,7 +22,7 @@ Example
       body = ""
 
 
-  class RoleValidator(Validator):
+  class RoleValidator:
 
       def __init__(self, role):
           self.role = role

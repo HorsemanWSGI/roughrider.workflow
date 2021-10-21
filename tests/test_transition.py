@@ -43,17 +43,6 @@ def test_transition():
     )
 
 
-def test_init_transition_faulty():
-
-    with pytest.raises(TypeError) as exc:
-        Transition()
-
-    assert str(exc.value) == (
-        "__new__() missing 3 required positional arguments: "
-        "'action', 'origin', and 'target'"
-    )
-
-
 def test_transitions_internal_edges():
 
     transitions = Transitions((forward,))
